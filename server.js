@@ -18,7 +18,7 @@ const s3 = new AWS.S3();
 const BUCKET_NAME = "yt-mp3-storage";
 
 // Local yt-dlp path
-const YTDLP_PATH = path.join(__dirname, "tools", "yt-dlp");
+const YTDLP_PATH = "yt-dlp";
 
 // yt-dlp needs directory (not binary file)
 const ffmpegDir = path.dirname(ffmpegPath);
