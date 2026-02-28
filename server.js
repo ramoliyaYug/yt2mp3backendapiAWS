@@ -80,6 +80,7 @@ app.post("/youtube-to-s3", async (req, res) => {
         // ===============================
         const cmd =
             `"${YTDLP_PATH}" -x --audio-format mp3 ` +
+            `--cookies "${path.join(__dirname, 'cookies.txt')}" ` +
             `--ffmpeg-location "${ffmpegDir}" ` +
             `-o "${outputPath}" "${normalizedUrl}"`;
 
