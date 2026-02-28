@@ -78,9 +78,12 @@ app.post("/youtube-to-s3", async (req, res) => {
         // ===============================
         // 2️⃣ Run LOCAL yt-dlp
         // ===============================
+        const cookiesPath = path.join(__dirname, "cookies.txt");
+
         const cmd =
             `"${YTDLP_PATH}" -x --audio-format mp3 ` +
-            `--cookies "${path.join(__dirname, 'cookies.txt')}" ` +
+            `--js-runtimes deno ` +
+            `--cookies "${cookiesPath}" ` +
             `--ffmpeg-location "${ffmpegDir}" ` +
             `-o "${outputPath}" "${normalizedUrl}"`;
 
